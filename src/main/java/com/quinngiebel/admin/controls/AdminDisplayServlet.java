@@ -23,7 +23,7 @@ public class AdminDisplayServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String forwardUrl = "/index.jsp";
         PieceDao pieceDao = new PieceDao();
-        List<Piece> pieces = pieceDao.getAllPieces();
+        List<Piece> pieces = pieceDao.getAll();
 
         request.setAttribute("pieces", pieces);
 
