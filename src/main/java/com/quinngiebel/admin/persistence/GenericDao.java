@@ -93,10 +93,6 @@ public class GenericDao<T> {
         session.close();
     }
 
-    /**
-     * Sets the class type of the DAO
-     * @param type The class type.
-     */
     public void setType(Class<T> type) {
         this.type = type;
     }

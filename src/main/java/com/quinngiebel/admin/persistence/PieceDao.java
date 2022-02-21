@@ -8,6 +8,7 @@ public class PieceDao extends GenericDao<Piece> {
      * Default constructor for a Piece DAO.
      */
     public PieceDao() {
+        this.setType(Piece.class);
     }
 
     /**
@@ -21,11 +22,11 @@ public class PieceDao extends GenericDao<Piece> {
 
     /**
      * Unarchives a piece.
-     * @param toArchive The piece being unarchived.
+     * @param toPublish The piece being unarchived.
      */
-    public void unarchivePiece(Piece toArchive) {
-        toArchive.setArchived(false);
-        update(toArchive);
+    public void publishPiece(Piece toPublish) {
+        toPublish.setArchived(false);
+        update(toPublish);
     }
 
 

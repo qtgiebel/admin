@@ -5,5 +5,6 @@ import com.quinngiebel.admin.entities.Category;
 public class CategoryDao extends GenericDao<Category> {
 
     public CategoryDao() {
+        this.setType(Category.class);
     }
 }

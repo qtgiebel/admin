@@ -2,6 +2,28 @@ use testdb;
 
 drop table pieces;
 drop table categories;
+drop table users;
+
+create table users
+(
+    id                 int auto_increment,
+    email              varchar(254)          not null,
+    password           varchar(254)          not null,
+    view_permission    boolean default true  not null,
+    archive_permission boolean default false not null,
+    remove_permission  boolean default false not null,
+    publish_permission boolean default false not null,
+    constraint users_pk
+        primary key (id)
+);
+
+create unique index users_id_uindex
+    on users (id);
+create unique index users_email_uindex
+    on users (email);
+
+insert into users (email, password) values ('qtgiebel@gmail.com', 'password');
+insert into users (email, password) values ('qgiebel@madisoncollege.edu', 'password');
 
 create table categories
 (

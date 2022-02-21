@@ -13,8 +13,8 @@ import javax.persistence.*;
 @Table(name = "users")
 public class User {
     @Id @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
-    @GenericGenerator(name = "native",strategy = "Native")
-    @Column(name = "user_id")
+    @GenericGenerator(name = "native",strategy = "native")
+    @Column
     private int id;
 
     @Column
@@ -23,21 +23,40 @@ public class User {
     @Column
     private String password;
 
-    @Column(name = "view_permission")
+    @Column(name = "view_permission", columnDefinition = "boolean default true")
     private boolean viewPermission;
 
-    @Column(name = "archive_permission")
+    @Column(name = "archive_permission", columnDefinition = "boolean default false")
     private boolean archivePermission;
 
-    @Column(name = "remove_permission")
+    @Column(name = "remove_permission", columnDefinition = "boolean default false")
     private boolean removePermission;
 
-    @Column(name = "publish_permission")
+    @Column(name = "publish_permission", columnDefinition = "boolean default false")
     private boolean publishPermission;
 
     public User() {
     }
 
+    /**
+     * Creates a user with default permissions.
+     * @param email     The user's email address.
+     * @param password  The user's password.
+     */
+    public User(String email, String password) {
+        this.setEmail(email);
+        this.setPassword(password);
+    }
+
+    /**
+     * Creates a user with non-standard permissions.
+     * @param email             The user's email address.
+     * @param password          The user's password.
+     * @param viewPermission    Permission to view the admin tool.
+     * @param archivePermission Permission to archive pieces.
+     * @param removePermission  Permission to delete pieces.
+     * @param publishPermission Permission to unarchive pieces.
+     */
     public User(String email, String password, boolean viewPermission, boolean archivePermission,
                 boolean removePermission, boolean publishPermission) {
         this.setEmail(email);
