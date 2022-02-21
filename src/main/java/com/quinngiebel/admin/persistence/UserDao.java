@@ -1,0 +1,29 @@
+package com.quinngiebel.admin.persistence;
+
+import com.quinngiebel.admin.entities.User;
+
+import java.util.List;
+
+public class UserDao {
+    List<User> users;
+
+    public List<User> getAllUsers(){
+        return null;
+    }
+
+    public User addUser(User user) {
+        return null;
+    }
+
+    public User getUser(int rollNo) {
+        return null;
+    }
+
+    public void updateUser(User user) {
+
+    }
+
+    public void deleteStudent(User user) {
+
+    }
+}
