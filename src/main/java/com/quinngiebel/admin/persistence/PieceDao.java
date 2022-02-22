@@ -2,6 +2,9 @@ package com.quinngiebel.admin.persistence;
 
 import com.quinngiebel.admin.entities.Piece;
 
+/**
+ * The type Piece dao.
+ */
 public class PieceDao extends GenericDao<Piece> {
 
     /**
