@@ -6,15 +6,14 @@ drop table users;
 
 create table users
 (
-    id                 int auto_increment,
+    id                 int auto_increment
+                           primary key ,
     email              varchar(254)          not null,
     password           varchar(254)          not null,
     view_permission    boolean default true  not null,
     archive_permission boolean default false not null,
     remove_permission  boolean default false not null,
-    publish_permission boolean default false not null,
-    constraint users_pk
-        primary key (id)
+    publish_permission boolean default false not null
 );
 
 create unique index users_id_uindex
@@ -27,10 +26,9 @@ insert into users (email, password) values ('qgiebel@madisoncollege.edu', 'passw
 
 create table categories
 (
-    id   int auto_increment,
-    name varchar(20) not null,
-    constraint categories_pk
-        primary key (id)
+    id   int auto_increment
+             primary key ,
+    name varchar(20) not null
 );
 
 insert into categories (name) value ('other');
@@ -41,11 +39,11 @@ insert into categories (name) value ('sketch');
 create table pieces
 (
     id          int auto_increment
-        primary key,
-    title       varchar(45)          not null,
-    location    varchar(254)         not null,
-    is_archived tinyint(1) default 0 not null,
-    category_id int        default 1 not null,
+                    primary key,
+    title       varchar(45)            not null,
+    location    varchar(254)           not null,
+    is_archived tinyint(1)   default 0 not null,
+    category_id int          default 1 not null,
     constraint category_fk
         foreign key (category_id) references categories (id)
             on delete cascade
