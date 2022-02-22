@@ -93,6 +93,10 @@ public class GenericDao<T> {
         session.close();
     }
 
+    public Class<T> getType() {
+        return type;
+    }
+
     public void setType(Class<T> type) {
         this.type = type;
     }
