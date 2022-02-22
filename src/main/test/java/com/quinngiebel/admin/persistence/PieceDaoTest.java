@@ -43,9 +43,7 @@ public class PieceDaoTest {
     void archivePieceSuccess() {
         Piece toArchive = pieceDao.getById(1);
         pieceDao.archivePiece(toArchive);
-        assertEquals(2,
-                pieceDao.getByColumn("archived",
-                        true).size());
+        assertEquals(2, pieceDao.getByColumn("archived", true).size());
     }
 
     /**
@@ -55,10 +53,6 @@ public class PieceDaoTest {
     void unarchivePieceSuccess() {
         Piece toPublish = pieceDao.getById(8);
         pieceDao.publishPiece(toPublish);
-        assertEquals(
-                9,
-                pieceDao.getByColumn(
-                        "archived",
-                        false).size());
+        assertEquals(9, pieceDao.getByColumn("archived",false).size());
     }
 }
