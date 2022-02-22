@@ -35,11 +35,15 @@ public class User {
     @Column(name = "publish_permission", columnDefinition = "boolean default false")
     private boolean publishPermission;
 
+    /**
+     * Default constructor for a User.
+     */
     public User() {
     }
 
     /**
      * Creates a user with default permissions.
+     *
      * @param email     The user's email address.
      * @param password  The user's password.
      */
@@ -50,6 +54,7 @@ public class User {
 
     /**
      * Creates a user with non-standard permissions.
+     *
      * @param email             The user's email address.
      * @param password          The user's password.
      * @param viewPermission    Permission to view the admin tool.
@@ -67,62 +72,138 @@ public class User {
         this.setPublishPermission(publishPermission);
     }
 
+    /**
+     * Gets id.
+     *
+     * @return the id
+     */
     public int getId() {
         return id;
     }
 
+    /**
+     * Sets id.
+     *
+     * @param userId the user id
+     */
     public void setId(int userId) {
         this.id = userId;
     }
 
+    /**
+     * Gets email.
+     *
+     * @return the email
+     */
     public String getEmail() {
         return email;
     }
 
+    /**
+     * Sets email.
+     *
+     * @param email the email
+     */
     public void setEmail(String email) {
         this.email = email;
     }
 
+    /**
+     * Gets password.
+     *
+     * @return the password
+     */
     public String getPassword() {
         return password;
     }
 
+    /**
+     * Sets password.
+     *
+     * @param password the password
+     */
     public void setPassword(String password) {
         this.password = password;
     }
 
+    /**
+     * Verifies if the user has viewing permissions.
+     *
+     * @return If the user has permission to view pieces
+     */
     public boolean isViewPermission() {
         return viewPermission;
     }
 
+    /**
+     * Sets if the user has viewing permissions.
+     *
+     * @param viewPermission the view permission
+     */
     public void setViewPermission(boolean viewPermission) {
         this.viewPermission = viewPermission;
     }
 
+    /**
+     * Verifies if the user has archiving permissions.
+     *
+     * @return If the user has permission to archive pieces.
+     */
     public boolean isArchivePermission() {
         return archivePermission;
     }
 
+    /**
+     * Sets if the user has archiving permissions.
+     *
+     * @param archivePermission the archive permission.
+     */
     public void setArchivePermission(boolean archivePermission) {
         this.archivePermission = archivePermission;
     }
 
+    /**
+     * Verifies if the user has removing permissions.
+     *
+     * @return If the user has permission to remove pieces
+     */
     public boolean isRemovePermission() {
         return removePermission;
     }
 
+    /**
+     * Sets if the user has removing permissions.
+     *
+     * @param removePermission the remove permission.
+     */
     public void setRemovePermission(boolean removePermission) {
         this.removePermission = removePermission;
     }
 
+    /**
+     * Verifies if the user has publishing permissions.
+     *
+     * @return If the user has permission to publish pieces.
+     */
     public boolean isPublishPermission() {
         return publishPermission;
     }
 
+    /**
+     * Sets if the user has publishing permissions.
+     *
+     * @param publishPermission the publish permission.
+     */
     public void setPublishPermission(boolean publishPermission) {
         this.publishPermission = publishPermission;
     }
 
+    /**
+     * Verifies a User object is equal to another object.
+     *
+     * @param o The object being verified.
+     * @return  If the two objects are equal or not.
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -139,6 +220,11 @@ public class User {
         return password.equals(user.password);
     }
 
+    /**
+     * Returns a string representation of a User.
+     *
+     * @return A string representation of a User.
+     */
     @Override
     public String toString() {
         return "User{" +
