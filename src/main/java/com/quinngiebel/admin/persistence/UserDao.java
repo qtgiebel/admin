@@ -2,28 +2,15 @@ package com.quinngiebel.admin.persistence;
 
 import com.quinngiebel.admin.entities.User;
 
-import java.util.List;
+/**
+ * The type User dao.
+ */
+public class UserDao extends GenericDao<User> {
 
-public class UserDao {
-    List<User> users;
-
-    public List<User> getAllUsers(){
-        return null;
-    }
-
-    public User addUser(User user) {
-        return null;
-    }
-
-    public User getUser(int rollNo) {
-        return null;
-    }
-
-    public void updateUser(User user) {
-
-    }
-
-    public void deleteStudent(User user) {
-
+    /**
+     * Default constructor for a User dao.
+     */
+    public UserDao() {
+        this.setType(User.class);
     }
 }
