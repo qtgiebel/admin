@@ -122,4 +122,33 @@ public class User {
     public void setPublishPermission(boolean publishPermission) {
         this.publishPermission = publishPermission;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        User user = (User) o;
+
+        if (id != user.id) return false;
+        if (viewPermission != user.viewPermission) return false;
+        if (archivePermission != user.archivePermission) return false;
+        if (removePermission != user.removePermission) return false;
+        if (publishPermission != user.publishPermission) return false;
+        if (!email.equals(user.email)) return false;
+        return password.equals(user.password);
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", viewPermission=" + viewPermission +
+                ", archivePermission=" + archivePermission +
+                ", removePermission=" + removePermission +
+                ", publishPermission=" + publishPermission +
+                '}';
+    }
 }
