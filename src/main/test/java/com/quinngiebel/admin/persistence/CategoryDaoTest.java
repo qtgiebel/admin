@@ -28,7 +28,6 @@ public class CategoryDaoTest {
      */
     @Test
     void setTypeSuccess() {
-        categoryDao = new CategoryDao();
         assertEquals(Category.class, categoryDao.getType());
     }
 }
