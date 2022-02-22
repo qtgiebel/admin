@@ -37,8 +37,8 @@ public class GenericDaoTest {
      @Test
      void insertSuccess() {
          User user = new User("asdf@gmail.com", "password");
-         int output = dao.insert(user);
-         assertEquals(3, output);
+         User output = (User) dao.getById(dao.insert(user));
+         assertEquals(user, output);
      }
 
     /**
@@ -46,7 +46,7 @@ public class GenericDaoTest {
      */
     @Test
     void getAllSuccess() {
-        List<User> users = dao.getAll();
+        List<User> users = (List<User>) dao.getAll();
         assertEquals(2, users.size());
     }
 

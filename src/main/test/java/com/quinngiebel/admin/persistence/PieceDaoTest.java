@@ -17,7 +17,7 @@ public class PieceDaoTest {
     private final Logger logger = LogManager.getLogger(this.getClass());
 
     /**
-     * Create the DAO.
+     * Reset the database and create the DAO.
      */
     @BeforeEach
     void setUp() {
@@ -26,6 +26,14 @@ public class PieceDaoTest {
             logger.info("Database reset success");
         }
         pieceDao = new PieceDao();
+    }
+
+    /**
+     * Verifies dao type is set correctly.
+     */
+    @Test
+    void setTypeSuccess() {
+        assert(pieceDao.getType().equals(Piece.class));
     }
 
     /**
